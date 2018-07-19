@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7611010C-145B-469E-A2CA-AF10406FC9AB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>S_Foundation</RootNamespace>
+    <AssemblyName>S_Foundation</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin_registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_registration.Designer.cs">
+      <DependentUpon>Admin_registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admission_form.Designer.cs">
+      <DependentUpon>Admission_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\DbManager.cs" />
+    <Compile Include="Batch_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Batch_details.Designer.cs">
+      <DependentUpon>Batch_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CourseDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseDetail.Designer.cs">
+      <DependentUpon>CourseDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Daily_Expense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daily_Expense.Designer.cs">
+      <DependentUpon>Daily_Expense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="demo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="demo.Designer.cs">
+      <DependentUpon>demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enquiry_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enquiry_Form.Designer.cs">
+      <DependentUpon>Enquiry_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty_Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faculty_Detail.Designer.cs">
+      <DependentUpon>Faculty_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginPanel.Designer.cs">
+      <DependentUpon>LoginPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageRoles.Designer.cs">
+      <DependentUpon>ManageRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master.Designer.cs">
+      <DependentUpon>Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student_attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_attendance.Designer.cs">
+      <DependentUpon>Student_attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S_FoundationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>S_FoundationDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin_registration.resx">
+      <DependentUpon>Admin_registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admission_form.resx">
+      <DependentUpon>Admission_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Batch_details.resx">
+      <DependentUpon>Batch_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseDetail.resx">
+      <DependentUpon>CourseDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Daily_Expense.resx">
+      <DependentUpon>Daily_Expense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="demo.resx">
+      <DependentUpon>demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Enquiry_Form.resx">
+      <DependentUpon>Enquiry_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faculty_Detail.resx">
+      <DependentUpon>Faculty_Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPanel.resx">
+      <DependentUpon>LoginPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageRoles.resx">
+      <DependentUpon>ManageRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master.resx">
+      <DependentUpon>Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Student_attendance.resx">
+      <DependentUpon>Student_attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="S_FoundationDataSet.xsc">
+      <DependentUpon>S_FoundationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="S_FoundationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>S_FoundationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="S_FoundationDataSet.xss">
+      <DependentUpon>S_FoundationDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

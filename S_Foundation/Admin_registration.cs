@@ -18,7 +18,6 @@ namespace S_Foundation
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-F1LPI1N\MSSQLSERVER1;Initial Catalog=S_Foundation;User ID=sa;password=1234");
         SqlCommand cmd;
-        SqlDataAdapter adapt;
         MemoryStream ms = new MemoryStream();
         byte[] PhotoByte = null;
         

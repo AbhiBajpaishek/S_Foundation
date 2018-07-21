@@ -59,7 +59,7 @@
     <Compile Include="Admission_form.Designer.cs">
       <DependentUpon>Admission_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\DbManager.cs" />
+    <Compile Include="App_Code\DBClass.cs" />
     <Compile Include="Batch_details.cs">
       <SubType>Form</SubType>
     </Compile>

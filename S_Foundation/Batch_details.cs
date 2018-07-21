@@ -14,8 +14,6 @@ namespace S_Foundation
     {
         SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=S_Foundation;Integrated Security=true");
         SqlCommand cmd;
-        SqlDataAdapter adapt;
-        string sql;
         String name;
         public Batch_details(string name)
         {

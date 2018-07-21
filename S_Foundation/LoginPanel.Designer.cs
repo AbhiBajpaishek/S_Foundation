@@ -34,7 +34,7 @@
             this.rb_admin = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Cancel = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.Login = new System.Windows.Forms.Button();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.txt_Userid = new System.Windows.Forms.TextBox();
@@ -87,7 +87,7 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.rb_admin);
-            this.groupBox1.Controls.Add(this.Cancel);
+            this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.Login);
             this.groupBox1.Controls.Add(this.txt_Password);
             this.groupBox1.Controls.Add(this.rb_user);
@@ -117,15 +117,16 @@
             this.label3.Text = "Not Registered? Register Here";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // Cancel
+            // btnExit
             // 
-            this.Cancel.BackColor = System.Drawing.Color.SeaGreen;
-            this.Cancel.Location = new System.Drawing.Point(313, 191);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(75, 35);
-            this.Cancel.TabIndex = 3;
-            this.Cancel.Text = "Cancel";
-            this.Cancel.UseVisualStyleBackColor = false;
+            this.btnExit.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnExit.Location = new System.Drawing.Point(313, 191);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 35);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Login
             // 
@@ -200,7 +201,7 @@
         private System.Windows.Forms.RadioButton rb_user;
         private System.Windows.Forms.RadioButton rb_admin;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button Login;
         private System.Windows.Forms.TextBox txt_Userid;
         private System.Windows.Forms.Label label2;

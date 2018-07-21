@@ -16,7 +16,7 @@ namespace S_Foundation
         SqlCommand cmd;
         SqlDataReader dr;
         string sql;
-
+        DBClass db = new DBClass();
         public LoginPanel()
         {
             InitializeComponent();
@@ -31,6 +31,8 @@ namespace S_Foundation
 
         private void Login_Click(object sender, EventArgs e)
         {
+            if (emptyCheck(txt_Userid.Text,txt_Password.Text) == false)
+                return;
             if (rb_admin.Checked == true)
                 admincheck();
             else if (rb_user.Checked == true)
@@ -44,11 +46,14 @@ namespace S_Foundation
             admin_pass = txt_Password.Text.Trim();
             try
             {
-                sql = "select userid,password from s_admin where userid='" + admin_name + "'and password='" + admin_pass + "'";
-                con.Open();
-                cmd = new SqlCommand(sql, con);
-                dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                sql = "select password from s_admin where userid='" + admin_name + "'";                
+                if (db.readScalarData(sql) == null)
+                {
+                    MessageBox.Show("Invalid UserId");
+                    return;
+                }
+                string pass = db.readScalarData(sql).ToString();
+                if (pass==admin_pass)
                 {
                     this.Hide();
                     Form1 f1 = new Form1(rb_admin.Text,admin_name);
@@ -56,15 +61,14 @@ namespace S_Foundation
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Login please check username and password");
+                    MessageBox.Show("Invalid Password");
                 }
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Console.Beep();
             }
-            con.Close();
-            dr.Close();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -75,38 +79,62 @@ namespace S_Foundation
         private void LoginPanel_Load(object sender, EventArgs e)
         {
             txt_Userid.Focus();
-            rb_admin.Checked = true;
-                       
+            rb_admin.Checked = true;                
         }
 
         public void usercheck()
         {
-            string admin_name, admin_pass;
-            admin_name = txt_Userid.Text.Trim();
-            admin_pass = txt_Password.Text.Trim();
-            try
-            {
-                sql = "select userid,password from s_user where userid='" + admin_name + "'and password='" + admin_pass + "'";
-                con.Open();
-                cmd = new SqlCommand(sql, con);
-                dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+            string user_name, user_pass;
+            user_name = txt_Userid.Text.Trim();
+            user_pass = txt_Password.Text.Trim();
+                try
                 {
-                    this.Hide();
-                    Form1 f1 = new Form1(rb_user.Text,admin_name);
-                    f1.Show();
+                    sql = "select password from s_user where userid='" + user_name + "'";
+                    if (db.readScalarData(sql) == null)
+                    {
+                        MessageBox.Show("Invalid UserId");
+                        return;
+                    }
+                    string pass = db.readScalarData(sql).ToString();
+                    if (pass == user_pass)
+                    {
+                        this.Hide();
+                        Form1 f1 = new Form1(rb_admin.Text, user_name);
+                        f1.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Password");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Invalid Login please check username and password");
-                }
-            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }  
+        }
+
+
+        public bool emptyCheck(String id,String pass)
+        {
+            if (id == "")
+            {
+                if (pass == "")
+                    MessageBox.Show("Please Enter Id and Password");
+                else
+                    MessageBox.Show("Please Enter Id");
+                return false;
             }
-            con.Close();
-            dr.Close();
+            else if(pass=="")
+            {
+                MessageBox.Show("Please Enter Password");
+                return false;
+            }
+            return true;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

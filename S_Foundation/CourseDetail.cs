@@ -26,14 +26,12 @@ namespace S_Foundation
         private void button1_Click(object sender, EventArgs e)
         {
 
-            cmd = new SqlCommand("insert into tbl_couse(course_name,duration,course_fee,discount) values(@course_name,@duration,@course_fee,@discount)", con);
+            cmd = new SqlCommand("insert into tbl_course(course_name,duration,course_fee,discount) values(@course_name,@duration,@course_fee,@discount)", con);
             con.Open();
             cmd.Parameters.AddWithValue("@course_name", txt_CourseName.Text);
             cmd.Parameters.AddWithValue("@duration", txt_Duration.Text);
             cmd.Parameters.AddWithValue("@course_fee", txt_CourseFee.Text);
             cmd.Parameters.AddWithValue("@discount", txt_Discount.Text);
-            
-
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Record Inserted Successfully");
@@ -53,7 +51,7 @@ namespace S_Foundation
         {
             con.Open();
             DataTable dt = new DataTable();
-            sql = "select * from tbl_couse ";
+            sql = "select * from tbl_course ";
             adapt = new SqlDataAdapter(sql, con);
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;

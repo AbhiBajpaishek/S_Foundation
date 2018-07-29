@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txt_Duration = new System.Windows.Forms.TextBox();
+            this.txt_Discount = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txt_CourseFee = new System.Windows.Forms.TextBox();
             this.txt_CourseName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_Discount = new System.Windows.Forms.TextBox();
-            this.txt_Duration = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -63,6 +63,40 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Course Detail";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(176, 244);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 33);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txt_Duration
+            // 
+            this.txt_Duration.Location = new System.Drawing.Point(176, 102);
+            this.txt_Duration.Name = "txt_Duration";
+            this.txt_Duration.Size = new System.Drawing.Size(226, 23);
+            this.txt_Duration.TabIndex = 2;
+            // 
+            // txt_Discount
+            // 
+            this.txt_Discount.Location = new System.Drawing.Point(176, 184);
+            this.txt_Discount.Name = "txt_Discount";
+            this.txt_Discount.Size = new System.Drawing.Size(226, 23);
+            this.txt_Discount.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(78, 187);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 15);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Discount:";
             // 
             // txt_CourseFee
             // 
@@ -118,40 +152,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Course Id:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(78, 187);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 15);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Discount:";
-            // 
-            // txt_Discount
-            // 
-            this.txt_Discount.Location = new System.Drawing.Point(176, 184);
-            this.txt_Discount.Name = "txt_Discount";
-            this.txt_Discount.Size = new System.Drawing.Size(226, 23);
-            this.txt_Discount.TabIndex = 4;
-            // 
-            // txt_Duration
-            // 
-            this.txt_Duration.Location = new System.Drawing.Point(176, 102);
-            this.txt_Duration.Name = "txt_Duration";
-            this.txt_Duration.Size = new System.Drawing.Size(226, 23);
-            this.txt_Duration.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(176, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 33);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -167,7 +167,9 @@
             this.ClientSize = new System.Drawing.Size(923, 407);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CourseDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CourseDetail";
             this.Load += new System.EventHandler(this.CourseDetail_Load);
             this.groupBox1.ResumeLayout(false);

@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin_registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,18 +79,6 @@
     <Compile Include="CourseDetail.Designer.cs">
       <DependentUpon>CourseDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Daily_Expense.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Daily_Expense.Designer.cs">
-      <DependentUpon>Daily_Expense.cs</DependentUpon>
-    </Compile>
-    <Compile Include="demo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="demo.Designer.cs">
-      <DependentUpon>demo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Enquiry_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,31 +103,16 @@
     <Compile Include="LoginPanel.Designer.cs">
       <DependentUpon>LoginPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageRoles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageRoles.Designer.cs">
-      <DependentUpon>ManageRoles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Master.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Master.Designer.cs">
-      <DependentUpon>Master.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student_attendance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Student_attendance.Designer.cs">
-      <DependentUpon>Student_attendance.cs</DependentUpon>
-    </Compile>
     <Compile Include="S_FoundationDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>S_FoundationDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin_registration.resx">
       <DependentUpon>Admin_registration.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,12 +124,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CourseDetail.resx">
       <DependentUpon>CourseDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Daily_Expense.resx">
-      <DependentUpon>Daily_Expense.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="demo.resx">
-      <DependentUpon>demo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Enquiry_Form.resx">
       <DependentUpon>Enquiry_Form.cs</DependentUpon>
@@ -163,12 +137,6 @@
     <EmbeddedResource Include="LoginPanel.resx">
       <DependentUpon>LoginPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageRoles.resx">
-      <DependentUpon>ManageRoles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Master.resx">
-      <DependentUpon>Master.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -177,10 +145,8 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Student_attendance.resx">
-      <DependentUpon>Student_attendance.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -233,6 +199,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\background-images-for-software-projects-9.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

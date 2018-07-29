@@ -37,7 +37,6 @@ namespace S_Foundation
         {
             pb_Pic.Image.Save(ms, ImageFormat.Jpeg);
             PhotoByte = ms.ToArray();
-
             cmd = new SqlCommand("insert into s_admin(Name,dob,userid,password,email_id,photograph) values(@name,@dob,@userid,@password,@emailid,@pic)", con);
             con.Open();
             cmd.Parameters.AddWithValue("@name", txt_Name.Text);         
@@ -46,7 +45,6 @@ namespace S_Foundation
             cmd.Parameters.AddWithValue("@password", txt_password.Text);
             cmd.Parameters.AddWithValue("@emailid", txt_Emailid.Text);
             cmd.Parameters.AddWithValue("@pic", PhotoByte);
-
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Record Inserted Successfully");

@@ -27,6 +27,7 @@ namespace S_Foundation
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            this.ActiveMdiChild.Hide();
             Enquiry_Form objef = new Enquiry_Form(name);
             objef.MdiParent = this;
             objef.Show();
@@ -34,21 +35,12 @@ namespace S_Foundation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string message = "Do you want to Logout?";
-            string title = "Logout";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-
-            DialogResult result = MessageBox.Show(message, title, buttons);
-            if (result == DialogResult.Yes)
-            {
-                LoginPanel objlp = new LoginPanel();
-                this.Close();
-                objlp.Show();            
-            }
+          
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
+            this.ActiveMdiChild.Hide();
             Admission_form objaf = new Admission_form(name);
             objaf.MdiParent = this;
             objaf.Show();
@@ -56,6 +48,7 @@ namespace S_Foundation
 
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
+            this.ActiveMdiChild.Hide();
             Faculty_Detail objfd = new Faculty_Detail(name);
             objfd.MdiParent = this;
             objfd.Show();
@@ -63,16 +56,47 @@ namespace S_Foundation
 
         private void toolStripButton8_Click(object sender, EventArgs e)
         {
-            CourseDetail objcd = new CourseDetail();
-            objcd.MdiParent = this;
+            this.ActiveMdiChild.Hide();
+            CourseDetail objcd = new CourseDetail
+            {
+                MdiParent = this
+            };
             objcd.Show();
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
+            this.ActiveMdiChild.Hide();
             Batch_details objbd = new Batch_details(name);
             objbd.MdiParent = this;
             objbd.Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            string message = "Do you want to Logout?";
+            string title = "Logout";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                LoginPanel objlp = new LoginPanel();
+                this.Hide();
+                objlp.Show();
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripAddUser_Click(object sender, EventArgs e)
+        {
+            this.ActiveMdiChild.Hide();
+            Admin_registration objar = new Admin_registration();
+            objar.MdiParent = this;
+            objar.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -80,7 +104,9 @@ namespace S_Foundation
             timer1.Enabled = true;
             toolStripStatusLabel1.Text =rb_selected.ToString()+" : "+ name.ToString();
             toolStripStatusLabel2.Text = "Date : "+String.Format(DateTime.Now.ToLongDateString());
-           
+            AdminDashboard adminDashboard = new AdminDashboard();
+            adminDashboard.MdiParent = this;
+            adminDashboard.Show();
         }
     }
 }

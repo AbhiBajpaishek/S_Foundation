@@ -16,7 +16,8 @@ namespace S_Foundation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginPanel());
+            Application.Run(new Form1("Admin","Abhishek"));
+            //Application.Run(new LoginPanel());
         }
     }
 }

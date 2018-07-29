@@ -54,7 +54,6 @@ namespace S_Foundation
             cmd = new SqlCommand("insert into tbl_batchdetail(batch_name,start_date,start_time,end_date,end_time,Submitted_On,Submitted_By) values "+
                 "(@batch_name,@start_date,@start_time,@end_date,@end_time,GETDATE(),@Submitted_By)", con);
             con.Open();
-
             cmd.Parameters.AddWithValue("@batch_name", txt_BatchName.Text);
             cmd.Parameters.AddWithValue("@start_date", dateStart.Value);
             cmd.Parameters.AddWithValue("@start_time", cmbHourStart.Text +":"+ cmbMinutesStart.Text);

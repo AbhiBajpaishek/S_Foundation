@@ -43,7 +43,7 @@ namespace S_Foundation
         {
             con.Open();
             DataTable dt = new DataTable();
-            sql = "select Course_name from tbl_couse";
+            sql = "select Course_name from tbl_course";
             adapt = new SqlDataAdapter(sql, con);
             adapt.Fill(dt);
             comboBox1.DataSource = dt;
@@ -56,7 +56,7 @@ namespace S_Foundation
         {
             con.Open();
             DataTable dt = new DataTable();
-            sql = "select Course_name from tbl_couse";
+            sql = "select Course_name from tbl_course";
             adapt = new SqlDataAdapter(sql, con);
             adapt.Fill(dt);
             comboBox3.DataSource = dt;

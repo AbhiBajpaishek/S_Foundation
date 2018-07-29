@@ -103,7 +103,6 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login Panel";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label3
             // 
@@ -115,7 +114,6 @@
             this.label3.Size = new System.Drawing.Size(224, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Not Registered? Register Here";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // btnExit
             // 

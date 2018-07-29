@@ -36,7 +36,7 @@ namespace S_Foundation
         private void cmb_Course_Name_SelectedValueChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            sql = "select duration,course_fee,discount from tbl_couse where course_name='" + cmb_Course_Name.Text + "'";
+            sql = "select duration,course_fee,discount from tbl_course where course_name='" + cmb_Course_Name.Text + "'";
             adapt = new SqlDataAdapter(sql, con);
             adapt.Fill(dt);
             if (dt.Rows.Count > 0)
@@ -80,11 +80,10 @@ namespace S_Foundation
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if(pb_photo.Image!=null)
             pb_photo.Image.Save(ms, ImageFormat.Jpeg);
             PhotoByte = ms.ToArray();
-
             string rb_gender = "";
-
             if (rb_male.Checked == true)
                 rb_gender = rb_male.Text;
 
@@ -111,16 +110,16 @@ namespace S_Foundation
             else if (rb_unmarried.Checked == true)
                 rb_marital = rb_unmarried.Text;
             
-            cmd = new SqlCommand("insert into tbl_admission(Name,Fathersname_or_husbandsname,dob,gender,category,marial_status,Nationality,Address,city,district,state,Pincode,Contact_No,Email_id,Parent_MobileNo,Fathers_Occ,photograph," +
+            cmd = new SqlCommand("insert into tbl_student(Name,Fathersname_or_husbandsname,dob,gender,category,marial_status,Nationality,Address,city,district,state,Pincode,Contact_No,Email_id,Parent_MobileNo,Fathers_Occ,photograph," +
                " HighSchool_stream,HighSchool_board,HighSchool_yearpassing,HighSchool_Marks,HighSchool_percentage,Inter_stream,Inter_board,Inter_yearpassing,Inter_Marks,Inter_percentage,Graduation_Stream,Graduation_university,Graduation_yearpassing,Graduation_Marks," +
                " Graduation_percentage,PostGraduation_Stream,PostGraduation_university,PostGraduation_yearpassing,PostGraduation_Marks,PostGraduation_percentage," +
-               " Otherq_stream,Otherq_university,Otherq_yearpassing,Otherq_marks,Otherq_percentage,Course_Name,Course_Duration, Course_Fee,Fee_Discount," +
-               "Batch_Name,Batch_timing,Admitted_on,CenterCode,RegistrationFee,DOdispatch, Submitted_On,Submitted_By) " +
+               " Otherq_stream,Otherq_university,Otherq_yearpassing,Otherq_marks,Otherq_percentage,Course_Id," +
+               "Batch_Id,Admitted_on,CenterCode,RegistrationFee, Submitted_On,Submitted_By) " +
                "values(@Name,@Fathersname_or_husbandsname,@dob,@gender,@category,@marial_status,@Nationality,@Address,@city,@district,@state,@Pincode,@Contact_No,@Email_id,@Parent_MobileNo,@Fathers_Occ,@photograph," +
                " @HighSchool_stream,@HighSchool_board,@HighSchool_yearpassing,@HighSchool_Marks,@HighSchool_percentage,@Inter_stream,@Inter_board,@Inter_yearpassing,@Inter_Marks,@Inter_percentage,@Graduation_Stream,@Graduation_university,@Graduation_yearpassing,@Graduation_Marks," +
                " @Graduation_percentage,@PostGraduation_Stream,@PostGraduation_university,@PostGraduation_yearpassing,@PostGraduation_Marks,@PostGraduation_percentage," +
-               " @Otherq_stream,@Otherq_university,@Otherq_yearpassing,@Otherq_marks,@Otherq_percentage,@Course_Name,@Course_Duration,@Course_Fee,@Fee_Discount," +
-               "@Batch_Name,@Batch_timing,@Admitted_on,@CenterCode,@RegistrationFee,@DOdispatch, GETDATE(),@Submitted_By)", con);
+               " @Otherq_stream,@Otherq_university,@Otherq_yearpassing,@Otherq_marks,@Otherq_percentage,@Course_Id," +
+               "@Batch_Id,@Admitted_on,@CenterCode,@RegistrationFee,GETDATE(),@Submitted_By)", con);
 
             cmd.Parameters.AddWithValue("@Name", txt_Name.Text.Trim());
             cmd.Parameters.AddWithValue("@Fathersname_or_husbandsname", txt_FatherName.Text.Trim());
@@ -128,7 +127,6 @@ namespace S_Foundation
             cmd.Parameters.AddWithValue("@gender", rb_gender);
             cmd.Parameters.AddWithValue("@category", rb_category);
             cmd.Parameters.AddWithValue("@marial_status", rb_marital);
-            cmd.Parameters.AddWithValue("@Nationality", txt_Nationality.Text.Trim());
             cmd.Parameters.AddWithValue("@Address", txt_Address.Text.Trim());
             cmd.Parameters.AddWithValue("@city", txt_City.Text.Trim());
             cmd.Parameters.AddWithValue("@district", txt_District.Text.Trim());
@@ -164,22 +162,16 @@ namespace S_Foundation
             cmd.Parameters.AddWithValue("@Otherq_yearpassing", txt_Otherq_Yearofpassing.Text.Trim());
             cmd.Parameters.AddWithValue("@Otherq_marks", txt_Otherq_Marks.Text.Trim());
             cmd.Parameters.AddWithValue("@Otherq_percentage", txt_Otherq_Percentage.Text.Trim());
-            cmd.Parameters.AddWithValue("@Course_Name", cmb_Course_Name.Text);
-            cmd.Parameters.AddWithValue("@Course_Duration", txt_CourseDuration.Text);
-            cmd.Parameters.AddWithValue("@Course_Fee", txt_CourseFee.Text);
-            cmd.Parameters.AddWithValue("@Fee_Discount", discount_store);
-            cmd.Parameters.AddWithValue("@Batch_Name", cmb_batch_name.Text);
-            cmd.Parameters.AddWithValue("@Batch_timing", txt_batchtiming.Text);
+            cmd.Parameters.AddWithValue("@Course_Id", cmb_Course_Name.SelectedValue);
+            cmd.Parameters.AddWithValue("@Batch_Id", cmb_batch_name.SelectedValue);
             cmd.Parameters.AddWithValue("@Admitted_on", date_Admittedon.Value);
             cmd.Parameters.AddWithValue("@CenterCode", txt_CenterCode.Text);
             cmd.Parameters.AddWithValue("@RegistrationFee", txt_RegistrationFee.Text.Trim());
-            cmd.Parameters.AddWithValue("@DOdispatch", date_DOD.Value);
             cmd.Parameters.AddWithValue("@Submitted_By", name);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Record Inserted Successfully");
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -205,24 +197,22 @@ namespace S_Foundation
         void combo_course_name_fill()
         {
             DataTable dt = new DataTable();
-            sql = "select Course_name from tbl_couse";
+            sql = "select course_id,Course_name from tbl_course";
             adapt = new SqlDataAdapter(sql, con);
             adapt.Fill(dt);
             cmb_Course_Name.DataSource = dt;
             cmb_Course_Name.DisplayMember = "Course_name";
-            cmb_Course_Name.ValueMember = "Course_name";
-
+            cmb_Course_Name.ValueMember = "Course_id";
         }
         void combo_batch_name_fill()
         {
             DataTable dt = new DataTable();
-            sql = "select batch_name from tbl_batchdetail";
+            sql = "select batch_id,batch_name from tbl_batchdetail";
             adapt = new SqlDataAdapter(sql, con);
             adapt.Fill(dt);
             cmb_batch_name.DataSource = dt;
             cmb_batch_name.DisplayMember = "batch_name";
-            cmb_batch_name.ValueMember = "batch_name";
-
+            cmb_batch_name.ValueMember = "batch_id";
         }
     }
 }

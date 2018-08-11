@@ -28,76 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dp_startedon = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pb_Pic = new System.Windows.Forms.PictureBox();
             this.dp_dob = new System.Windows.Forms.DateTimePicker();
-            this.txt_expyear = new System.Windows.Forms.TextBox();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.txt_Contact = new System.Windows.Forms.TextBox();
             this.txt_Address = new System.Windows.Forms.TextBox();
             this.txt_Name = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewFacultyDetails = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.txt_To = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.txt_Byname = new System.Windows.Forms.TextBox();
+            this.comboBoxFilterBy = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.radioBtnCourse = new System.Windows.Forms.RadioButton();
+            this.radioBtnName = new System.Windows.Forms.RadioButton();
+            this.radioBtnId = new System.Windows.Forms.RadioButton();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.radioButtonShowAll = new System.Windows.Forms.RadioButton();
+            this.contextMenuStripImageBox = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacultyDetails)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.contextMenuStripImageBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dp_startedon);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btnSubmit);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.pb_Pic);
             this.groupBox2.Controls.Add(this.dp_dob);
-            this.groupBox2.Controls.Add(this.txt_expyear);
             this.groupBox2.Controls.Add(this.txt_Email);
             this.groupBox2.Controls.Add(this.txt_Contact);
             this.groupBox2.Controls.Add(this.txt_Address);
             this.groupBox2.Controls.Add(this.txt_Name);
-            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Location = new System.Drawing.Point(9, 12);
+            this.groupBox2.Location = new System.Drawing.Point(137, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(771, 335);
+            this.groupBox2.Size = new System.Drawing.Size(771, 306);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add faculty details";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // dp_startedon
             // 
-            this.dp_startedon.Location = new System.Drawing.Point(225, 252);
+            this.dp_startedon.Location = new System.Drawing.Point(225, 216);
             this.dp_startedon.Name = "dp_startedon";
             this.dp_startedon.Size = new System.Drawing.Size(200, 20);
             this.dp_startedon.TabIndex = 19;
@@ -106,21 +101,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(103, 258);
+            this.label2.Location = new System.Drawing.Point(97, 223);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 18;
             this.label2.Text = "Started On:";
             // 
-            // button3
+            // btnSubmit
             // 
-            this.button3.Location = new System.Drawing.Point(225, 306);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 23);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Submit";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnSubmit.Location = new System.Drawing.Point(137, 265);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(248, 23);
+            this.btnSubmit.TabIndex = 17;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // button2
             // 
@@ -144,9 +139,14 @@
             // pb_Pic
             // 
             this.pb_Pic.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pb_Pic.ContextMenuStrip = this.contextMenuStripImageBox;
+            this.pb_Pic.ErrorImage = global::S_Foundation.Properties.Resources.user;
+            this.pb_Pic.Image = global::S_Foundation.Properties.Resources.user;
+            this.pb_Pic.InitialImage = global::S_Foundation.Properties.Resources.user;
             this.pb_Pic.Location = new System.Drawing.Point(538, 26);
             this.pb_Pic.Name = "pb_Pic";
             this.pb_Pic.Size = new System.Drawing.Size(145, 168);
+            this.pb_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_Pic.TabIndex = 14;
             this.pb_Pic.TabStop = false;
             // 
@@ -158,16 +158,9 @@
             this.dp_dob.TabIndex = 13;
             this.dp_dob.Value = new System.DateTime(2017, 7, 22, 0, 0, 0, 0);
             // 
-            // txt_expyear
-            // 
-            this.txt_expyear.Location = new System.Drawing.Point(225, 212);
-            this.txt_expyear.Name = "txt_expyear";
-            this.txt_expyear.Size = new System.Drawing.Size(200, 20);
-            this.txt_expyear.TabIndex = 12;
-            // 
             // txt_Email
             // 
-            this.txt_Email.Location = new System.Drawing.Point(225, 174);
+            this.txt_Email.Location = new System.Drawing.Point(225, 177);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(200, 20);
             this.txt_Email.TabIndex = 10;
@@ -194,19 +187,10 @@
             this.txt_Name.Size = new System.Drawing.Size(200, 20);
             this.txt_Name.TabIndex = 7;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(76, 215);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Experience Year:";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(126, 177);
+            this.label10.Location = new System.Drawing.Point(97, 180);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 13);
             this.label10.TabIndex = 4;
@@ -215,7 +199,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(99, 145);
+            this.label11.Location = new System.Drawing.Point(97, 145);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(67, 13);
             this.label11.TabIndex = 3;
@@ -224,7 +208,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(116, 87);
+            this.label12.Location = new System.Drawing.Point(97, 87);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 13);
             this.label12.TabIndex = 2;
@@ -242,126 +226,46 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(126, 25);
+            this.label14.Location = new System.Drawing.Point(97, 25);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(38, 13);
             this.label14.TabIndex = 0;
             this.label14.Text = "Name:";
             // 
-            // dataGridView1
+            // dataGridViewFacultyDetails
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 353);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(462, 238);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dataGridViewFacultyDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewFacultyDetails.Location = new System.Drawing.Point(12, 371);
+            this.dataGridViewFacultyDetails.Name = "dataGridViewFacultyDetails";
+            this.dataGridViewFacultyDetails.Size = new System.Drawing.Size(1005, 238);
+            this.dataGridViewFacultyDetails.TabIndex = 1;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker3);
-            this.groupBox1.Controls.Add(this.txt_To);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.txt_Byname);
-            this.groupBox1.Location = new System.Drawing.Point(484, 353);
+            this.groupBox1.Controls.Add(this.radioButtonShowAll);
+            this.groupBox1.Controls.Add(this.comboBoxFilterBy);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.radioBtnCourse);
+            this.groupBox1.Controls.Add(this.radioBtnName);
+            this.groupBox1.Controls.Add(this.radioBtnId);
+            this.groupBox1.Location = new System.Drawing.Point(72, 315);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(302, 165);
+            this.groupBox1.Size = new System.Drawing.Size(887, 50);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Searching Filter";
             // 
-            // radioButton3
+            // comboBoxFilterBy
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(17, 134);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(76, 17);
-            this.radioButton3.TabIndex = 14;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "By Course:";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(17, 98);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(71, 17);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "By Name:";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(13, 23);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(66, 17);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "By Date:";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(138, 66);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(158, 20);
-            this.dateTimePicker2.TabIndex = 8;
-            this.dateTimePicker2.Value = new System.DateTime(2017, 7, 21, 0, 0, 0, 0);
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(138, 40);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(158, 20);
-            this.dateTimePicker3.TabIndex = 7;
-            this.dateTimePicker3.Value = new System.DateTime(2017, 7, 21, 0, 0, 0, 0);
-            // 
-            // txt_To
-            // 
-            this.txt_To.AutoSize = true;
-            this.txt_To.Location = new System.Drawing.Point(60, 71);
-            this.txt_To.Name = "txt_To";
-            this.txt_To.Size = new System.Drawing.Size(23, 13);
-            this.txt_To.TabIndex = 6;
-            this.txt_To.Text = "To:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "From:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(138, 133);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(158, 21);
-            this.comboBox3.TabIndex = 4;
-            // 
-            // txt_Byname
-            // 
-            this.txt_Byname.Location = new System.Drawing.Point(138, 97);
-            this.txt_Byname.Name = "txt_Byname";
-            this.txt_Byname.Size = new System.Drawing.Size(158, 20);
-            this.txt_Byname.TabIndex = 3;
+            this.comboBoxFilterBy.FormattingEnabled = true;
+            this.comboBoxFilterBy.Location = new System.Drawing.Point(554, 17);
+            this.comboBoxFilterBy.Name = "comboBoxFilterBy";
+            this.comboBoxFilterBy.Size = new System.Drawing.Size(158, 21);
+            this.comboBoxFilterBy.TabIndex = 15;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(577, 524);
+            this.button4.Location = new System.Drawing.Point(738, 17);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(133, 23);
             this.button4.TabIndex = 18;
@@ -369,9 +273,45 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // radioBtnCourse
+            // 
+            this.radioBtnCourse.AutoSize = true;
+            this.radioBtnCourse.Location = new System.Drawing.Point(233, 23);
+            this.radioBtnCourse.Name = "radioBtnCourse";
+            this.radioBtnCourse.Size = new System.Drawing.Size(76, 17);
+            this.radioBtnCourse.TabIndex = 14;
+            this.radioBtnCourse.TabStop = true;
+            this.radioBtnCourse.Text = "By Course:";
+            this.radioBtnCourse.UseVisualStyleBackColor = true;
+            this.radioBtnCourse.CheckedChanged += new System.EventHandler(this.radioBtnCourse_CheckedChanged);
+            // 
+            // radioBtnName
+            // 
+            this.radioBtnName.AutoSize = true;
+            this.radioBtnName.Location = new System.Drawing.Point(115, 23);
+            this.radioBtnName.Name = "radioBtnName";
+            this.radioBtnName.Size = new System.Drawing.Size(71, 17);
+            this.radioBtnName.TabIndex = 13;
+            this.radioBtnName.TabStop = true;
+            this.radioBtnName.Text = "By Name:";
+            this.radioBtnName.UseVisualStyleBackColor = true;
+            this.radioBtnName.CheckedChanged += new System.EventHandler(this.radioBtnName_CheckedChanged);
+            // 
+            // radioBtnId
+            // 
+            this.radioBtnId.AutoSize = true;
+            this.radioBtnId.Location = new System.Drawing.Point(13, 23);
+            this.radioBtnId.Name = "radioBtnId";
+            this.radioBtnId.Size = new System.Drawing.Size(52, 17);
+            this.radioBtnId.TabIndex = 12;
+            this.radioBtnId.TabStop = true;
+            this.radioBtnId.Text = "By Id:";
+            this.radioBtnId.UseVisualStyleBackColor = true;
+            this.radioBtnId.CheckedChanged += new System.EventHandler(this.radioBtnId_CheckedChanged);
+            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(577, 553);
+            this.button5.Location = new System.Drawing.Point(313, 625);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(133, 23);
             this.button5.TabIndex = 26;
@@ -380,23 +320,47 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(577, 582);
+            this.button6.Location = new System.Drawing.Point(491, 625);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(133, 23);
             this.button6.TabIndex = 27;
             this.button6.Text = "Delete";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // radioButtonShowAll
+            // 
+            this.radioButtonShowAll.AutoSize = true;
+            this.radioButtonShowAll.Location = new System.Drawing.Point(367, 23);
+            this.radioButtonShowAll.Name = "radioButtonShowAll";
+            this.radioButtonShowAll.Size = new System.Drawing.Size(69, 17);
+            this.radioButtonShowAll.TabIndex = 19;
+            this.radioButtonShowAll.TabStop = true;
+            this.radioButtonShowAll.Text = "Show All:";
+            this.radioButtonShowAll.UseVisualStyleBackColor = true;
+            this.radioButtonShowAll.CheckedChanged += new System.EventHandler(this.radioButtonShowAll_CheckedChanged);
+            // 
+            // contextMenuStripImageBox
+            // 
+            this.contextMenuStripImageBox.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.contextMenuStripImageBox.Name = "contextMenuStripImageBox";
+            this.contextMenuStripImageBox.Size = new System.Drawing.Size(148, 26);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
+            this.toolStripMenuItem1.Text = "Open Camera";
+            // 
             // Faculty_Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 616);
+            this.ClientSize = new System.Drawing.Size(1029, 657);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewFacultyDetails);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Faculty_Detail";
@@ -406,9 +370,10 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacultyDetails)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.contextMenuStripImageBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -416,12 +381,10 @@
         #endregion
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dp_dob;
-        private System.Windows.Forms.TextBox txt_expyear;
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.TextBox txt_Contact;
         private System.Windows.Forms.TextBox txt_Address;
         private System.Windows.Forms.TextBox txt_Name;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -430,22 +393,20 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pb_Pic;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dataGridViewFacultyDetails;
+        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Label txt_To;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox txt_Byname;
+        private System.Windows.Forms.RadioButton radioBtnCourse;
+        private System.Windows.Forms.RadioButton radioBtnName;
+        private System.Windows.Forms.RadioButton radioBtnId;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DateTimePicker dp_startedon;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBoxFilterBy;
+        private System.Windows.Forms.RadioButton radioButtonShowAll;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripImageBox;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

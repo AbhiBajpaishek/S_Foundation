@@ -12,16 +12,17 @@ namespace S_Foundation
 {
     public partial class Batch_details : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=S_Foundation;Integrated Security=true");
-        SqlCommand cmd;
+        DBClass db = new DBClass();
         String name;
         public Batch_details(string name)
         {
             InitializeComponent();
             this.name = name;
             FillCmbHousMinutes();
+            fillComboBoxCourse();
+            fillDataGridBatchDetails();
         }
-
+        //initialising timing
         private void FillCmbHousMinutes()
         {
             try
@@ -46,24 +47,23 @@ namespace S_Foundation
                 MessageBox.Show(ex.Message);
             }
         }
+        // declared the datasource for Course Combo box
+        void fillComboBoxCourse()
+        {
+          comboBoxCourse.DataSource= db.ReadBulkData("select course_id, course_name from tbl_course");
+          comboBoxCourse.DisplayMember = "course_name";
+          comboBoxCourse.ValueMember = "course_id";
+        }
+        // for filling all batches details in gridview
+        void fillDataGridBatchDetails()
+        {
+            dataGridBatchDetails.DataSource = db.ReadBulkData("select * from tbl_batchdetail");
+        }
       
         private void button1_Click(object sender, EventArgs e)
         {
-            int start_time_hr = Convert.ToInt32(cmbHourStart.Text);
-            int start_tim_min = Convert.ToInt32(cmbMinutesStart.Text);
-            cmd = new SqlCommand("insert into tbl_batchdetail(batch_name,start_date,start_time,end_date,end_time,Submitted_On,Submitted_By) values "+
-                "(@batch_name,@start_date,@start_time,@end_date,@end_time,GETDATE(),@Submitted_By)", con);
-            con.Open();
-            cmd.Parameters.AddWithValue("@batch_name", txt_BatchName.Text);
-            cmd.Parameters.AddWithValue("@start_date", dateStart.Value);
-            cmd.Parameters.AddWithValue("@start_time", cmbHourStart.Text +":"+ cmbMinutesStart.Text);
-            cmd.Parameters.AddWithValue("@end_date", dateEnd.Value);
-            cmd.Parameters.AddWithValue("@end_time", cmbHourEnd.Text+":" + cmbMinuteEnd.Text);
-            cmd.Parameters.AddWithValue("@submitted_by", name);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Record Inserted Successfully");
-
+            if(db.InsertUpdateDelete("insert into tbl_batchdetail(batch_name, course_id, start_date, start_time, end_date, end_time, Submitted_On, Submitted_By) values ('" + txt_BatchName.Text + "','" + comboBoxCourse.SelectedItem + "','" + dateStart.Text + "','" + cmbHourStart.Text + cmbHourEnd.Text + "','" + dateEnd.Text + "','" + cmbHourEnd.Text + cmbMinuteEnd.Text + "','" + DateTime.Now + "','" + name + "')"))
+                MessageBox.Show("Record Inserted Successfully");
         }
     }
 }

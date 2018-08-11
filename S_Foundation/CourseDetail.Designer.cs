@@ -30,7 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.txt_Duration = new System.Windows.Forms.TextBox();
             this.txt_Discount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_CourseFee = new System.Windows.Forms.TextBox();
@@ -40,14 +39,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cmbDuration = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbDuration);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.txt_Duration);
             this.groupBox1.Controls.Add(this.txt_Discount);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txt_CourseFee);
@@ -59,7 +59,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(502, 332);
+            this.groupBox1.Size = new System.Drawing.Size(446, 332);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Course Detail";
@@ -73,13 +73,6 @@
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txt_Duration
-            // 
-            this.txt_Duration.Location = new System.Drawing.Point(176, 102);
-            this.txt_Duration.Name = "txt_Duration";
-            this.txt_Duration.Size = new System.Drawing.Size(226, 23);
-            this.txt_Duration.TabIndex = 2;
             // 
             // txt_Discount
             // 
@@ -155,16 +148,24 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(520, 99);
+            this.dataGridView1.Location = new System.Drawing.Point(475, 21);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(391, 245);
+            this.dataGridView1.Size = new System.Drawing.Size(589, 323);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // cmbDuration
+            // 
+            this.cmbDuration.FormattingEnabled = true;
+            this.cmbDuration.Location = new System.Drawing.Point(176, 102);
+            this.cmbDuration.Name = "cmbDuration";
+            this.cmbDuration.Size = new System.Drawing.Size(226, 23);
+            this.cmbDuration.TabIndex = 12;
             // 
             // CourseDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 407);
+            this.ClientSize = new System.Drawing.Size(1076, 407);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -189,9 +190,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txt_Duration;
         private System.Windows.Forms.TextBox txt_Discount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cmbDuration;
     }
 }

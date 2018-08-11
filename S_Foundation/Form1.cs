@@ -57,7 +57,7 @@ namespace S_Foundation
         private void toolStripButton8_Click(object sender, EventArgs e)
         {
             this.ActiveMdiChild.Hide();
-            CourseDetail objcd = new CourseDetail
+            CourseDetail objcd = new CourseDetail(name)
             {
                 MdiParent = this
             };

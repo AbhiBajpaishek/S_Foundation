@@ -18,6 +18,7 @@ namespace S_Foundation
             conn  = new SqlConnection(@"Data Source=.;Initial Catalog=S_Foundation;Integrated Security=true");
         }
 
+
         public bool InsertUpdateDelete(string command)
         {
             SqlCommand cmd = new SqlCommand(command, conn);
@@ -33,6 +34,7 @@ namespace S_Foundation
                 return false;
 
         }
+
         public DataTable ReadBulkData(string command)
         {
             SqlDataAdapter da = new SqlDataAdapter(command, conn);
@@ -79,7 +81,6 @@ namespace S_Foundation
             else
                 return false;
         }
-
 
         public bool spDelete(String mail)
         {

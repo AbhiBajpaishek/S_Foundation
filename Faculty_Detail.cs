@@ -70,7 +70,6 @@ namespace S_Foundation
                 cmd.Parameters.AddWithValue("@address", txt_Address.Text);
                 cmd.Parameters.AddWithValue("@contact_no", txt_Contact.Text);
                 cmd.Parameters.AddWithValue("@email", txt_Email.Text);
-
                 cmd.Parameters.AddWithValue("@exp_year", txt_expyear.Text);
                 cmd.Parameters.AddWithValue("@started_on", dp_startedon.Value);
                 cmd.Parameters.AddWithValue("@photograph", PhotoByte);

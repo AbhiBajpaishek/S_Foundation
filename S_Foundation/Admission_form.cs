@@ -110,17 +110,19 @@ namespace S_Foundation
             else if (rb_unmarried.Checked == true)
                 rb_marital = rb_unmarried.Text;
             
-            cmd = new SqlCommand("insert into tbl_student(Name,Fathersname_or_husbandsname,dob,gender,category,marial_status,Nationality,Address,city,district,state,Pincode,Contact_No,Email_id,Parent_MobileNo,Fathers_Occ,photograph," +
+            cmd = new SqlCommand("insert into tbl_student(Student_Id,Name,Fathersname_or_husbandsname,dob,gender,category,marial_status,Address,city,district,state,Pincode,Contact_No,Email_id,Parent_MobileNo,Fathers_Occ,photograph," +
                " HighSchool_stream,HighSchool_board,HighSchool_yearpassing,HighSchool_Marks,HighSchool_percentage,Inter_stream,Inter_board,Inter_yearpassing,Inter_Marks,Inter_percentage,Graduation_Stream,Graduation_university,Graduation_yearpassing,Graduation_Marks," +
                " Graduation_percentage,PostGraduation_Stream,PostGraduation_university,PostGraduation_yearpassing,PostGraduation_Marks,PostGraduation_percentage," +
-               " Otherq_stream,Otherq_university,Otherq_yearpassing,Otherq_marks,Otherq_percentage,Course_Id," +
-               "Batch_Id,Admitted_on,CenterCode,RegistrationFee, Submitted_On,Submitted_By) " +
-               "values(@Name,@Fathersname_or_husbandsname,@dob,@gender,@category,@marial_status,@Nationality,@Address,@city,@district,@state,@Pincode,@Contact_No,@Email_id,@Parent_MobileNo,@Fathers_Occ,@photograph," +
+               " Otherq_stream,Otherq_university,Otherq_yearpassing,Otherq_marks,Otherq_percentage," +
+               "Admitted_on,CenterCode,RegistrationFee, Submitted_On,Submitted_By) " +
+               "values(@Student_Id,@Name,@Fathersname_or_husbandsname,@dob,@gender,@category,@marial_status,@Address,@city,@district,@state,@Pincode,@Contact_No,@Email_id,@Parent_MobileNo,@Fathers_Occ,@photograph," +
                " @HighSchool_stream,@HighSchool_board,@HighSchool_yearpassing,@HighSchool_Marks,@HighSchool_percentage,@Inter_stream,@Inter_board,@Inter_yearpassing,@Inter_Marks,@Inter_percentage,@Graduation_Stream,@Graduation_university,@Graduation_yearpassing,@Graduation_Marks," +
                " @Graduation_percentage,@PostGraduation_Stream,@PostGraduation_university,@PostGraduation_yearpassing,@PostGraduation_Marks,@PostGraduation_percentage," +
-               " @Otherq_stream,@Otherq_university,@Otherq_yearpassing,@Otherq_marks,@Otherq_percentage,@Course_Id," +
-               "@Batch_Id,@Admitted_on,@CenterCode,@RegistrationFee,GETDATE(),@Submitted_By)", con);
-
+               " @Otherq_stream,@Otherq_university,@Otherq_yearpassing,@Otherq_marks,@Otherq_percentage," +
+               "@Admitted_on,@CenterCode,@RegistrationFee,GETDATE(),@Submitted_By)", con);
+            Random r = new Random();
+            String stdid = txt_Name.Text + r.Next(0, 10000) + txt_Address.Text.Substring(txt_Address.Text.Length - 1, 1);
+            cmd.Parameters.AddWithValue("@Student_Id", stdid);
             cmd.Parameters.AddWithValue("@Name", txt_Name.Text.Trim());
             cmd.Parameters.AddWithValue("@Fathersname_or_husbandsname", txt_FatherName.Text.Trim());
             cmd.Parameters.AddWithValue("@dob", date_dob.Value);
@@ -162,13 +164,13 @@ namespace S_Foundation
             cmd.Parameters.AddWithValue("@Otherq_yearpassing", txt_Otherq_Yearofpassing.Text.Trim());
             cmd.Parameters.AddWithValue("@Otherq_marks", txt_Otherq_Marks.Text.Trim());
             cmd.Parameters.AddWithValue("@Otherq_percentage", txt_Otherq_Percentage.Text.Trim());
-            cmd.Parameters.AddWithValue("@Course_Id", cmb_Course_Name.SelectedValue);
-            cmd.Parameters.AddWithValue("@Batch_Id", cmb_batch_name.SelectedValue);
             cmd.Parameters.AddWithValue("@Admitted_on", date_Admittedon.Value);
             cmd.Parameters.AddWithValue("@CenterCode", txt_CenterCode.Text);
             cmd.Parameters.AddWithValue("@RegistrationFee", txt_RegistrationFee.Text.Trim());
             cmd.Parameters.AddWithValue("@Submitted_By", name);
             con.Open();
+            cmd.ExecuteNonQuery();
+            cmd = new SqlCommand("INSERT INTO Tbl_StudentBatch(Student_Id, Batch_id) values('"+stdid+"',"+cmb_batch_name.SelectedValue+")", con);
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Record Inserted Successfully");

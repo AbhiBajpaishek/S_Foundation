@@ -29,7 +29,7 @@ namespace S_Foundation
             else if (rb_user.Checked == true)
                 admincheck("User");
         }
-        
+
         public void admincheck(string type)
         {
             try

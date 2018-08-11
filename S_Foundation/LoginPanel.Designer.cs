@@ -193,6 +193,11 @@
 
         }
 
+        private void Login_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;

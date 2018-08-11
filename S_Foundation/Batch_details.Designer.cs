@@ -41,10 +41,12 @@
             this.cmbHourEnd = new System.Windows.Forms.ComboBox();
             this.cmbMinuteEnd = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.comboBoxCourse = new System.Windows.Forms.ComboBox();
+            this.lblCourseName = new System.Windows.Forms.Label();
+            this.dataGridBatchDetails = new System.Windows.Forms.DataGridView();
+            this.btnAddBatch = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBatchDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,14 +103,14 @@
             // 
             this.txt_BatchName.Location = new System.Drawing.Point(151, 31);
             this.txt_BatchName.Name = "txt_BatchName";
-            this.txt_BatchName.Size = new System.Drawing.Size(167, 20);
+            this.txt_BatchName.Size = new System.Drawing.Size(184, 20);
             this.txt_BatchName.TabIndex = 5;
             // 
             // dateStart
             // 
             this.dateStart.Location = new System.Drawing.Point(151, 73);
             this.dateStart.Name = "dateStart";
-            this.dateStart.Size = new System.Drawing.Size(167, 20);
+            this.dateStart.Size = new System.Drawing.Size(184, 20);
             this.dateStart.TabIndex = 6;
             this.dateStart.Value = new System.DateTime(2017, 7, 25, 0, 0, 0, 0);
             // 
@@ -116,7 +118,7 @@
             // 
             this.dateEnd.Location = new System.Drawing.Point(151, 151);
             this.dateEnd.Name = "dateEnd";
-            this.dateEnd.Size = new System.Drawing.Size(167, 20);
+            this.dateEnd.Size = new System.Drawing.Size(184, 20);
             this.dateEnd.TabIndex = 7;
             this.dateEnd.Value = new System.DateTime(2017, 7, 26, 0, 0, 0, 0);
             // 
@@ -133,7 +135,7 @@
             // 
             this.cmbMinutesStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMinutesStart.FormattingEnabled = true;
-            this.cmbMinutesStart.Location = new System.Drawing.Point(244, 112);
+            this.cmbMinutesStart.Location = new System.Drawing.Point(261, 112);
             this.cmbMinutesStart.Name = "cmbMinutesStart";
             this.cmbMinutesStart.Size = new System.Drawing.Size(74, 21);
             this.cmbMinutesStart.TabIndex = 9;
@@ -151,13 +153,15 @@
             // 
             this.cmbMinuteEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMinuteEnd.FormattingEnabled = true;
-            this.cmbMinuteEnd.Location = new System.Drawing.Point(244, 195);
+            this.cmbMinuteEnd.Location = new System.Drawing.Point(261, 195);
             this.cmbMinuteEnd.Name = "cmbMinuteEnd";
             this.cmbMinuteEnd.Size = new System.Drawing.Size(74, 21);
             this.cmbMinuteEnd.TabIndex = 11;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBoxCourse);
+            this.groupBox1.Controls.Add(this.lblCourseName);
             this.groupBox1.Controls.Add(this.cmbMinuteEnd);
             this.groupBox1.Controls.Add(this.cmbHourEnd);
             this.groupBox1.Controls.Add(this.cmbMinutesStart);
@@ -172,36 +176,54 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(21, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(356, 243);
+            this.groupBox1.Size = new System.Drawing.Size(356, 283);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Batch Details";
             // 
-            // dataGridView1
+            // comboBoxCourse
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(408, 65);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(379, 212);
-            this.dataGridView1.TabIndex = 13;
+            this.comboBoxCourse.FormattingEnabled = true;
+            this.comboBoxCourse.Location = new System.Drawing.Point(151, 233);
+            this.comboBoxCourse.Name = "comboBoxCourse";
+            this.comboBoxCourse.Size = new System.Drawing.Size(184, 21);
+            this.comboBoxCourse.TabIndex = 13;
             // 
-            // button1
+            // lblCourseName
             // 
-            this.button1.Location = new System.Drawing.Point(171, 292);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.lblCourseName.AutoSize = true;
+            this.lblCourseName.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCourseName.Location = new System.Drawing.Point(24, 236);
+            this.lblCourseName.Name = "lblCourseName";
+            this.lblCourseName.Size = new System.Drawing.Size(86, 18);
+            this.lblCourseName.TabIndex = 12;
+            this.lblCourseName.Text = "Course Name";
+            // 
+            // dataGridBatchDetails
+            // 
+            this.dataGridBatchDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridBatchDetails.Location = new System.Drawing.Point(408, 36);
+            this.dataGridBatchDetails.Name = "dataGridBatchDetails";
+            this.dataGridBatchDetails.Size = new System.Drawing.Size(631, 281);
+            this.dataGridBatchDetails.TabIndex = 13;
+            // 
+            // btnAddBatch
+            // 
+            this.btnAddBatch.Location = new System.Drawing.Point(130, 332);
+            this.btnAddBatch.Name = "btnAddBatch";
+            this.btnAddBatch.Size = new System.Drawing.Size(145, 35);
+            this.btnAddBatch.TabIndex = 14;
+            this.btnAddBatch.Text = "Add Batch";
+            this.btnAddBatch.UseVisualStyleBackColor = true;
+            this.btnAddBatch.Click += new System.EventHandler(this.button1_Click);
             // 
             // Batch_details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 335);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1051, 421);
+            this.Controls.Add(this.btnAddBatch);
+            this.Controls.Add(this.dataGridBatchDetails);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Batch_details";
@@ -209,7 +231,7 @@
             this.Text = "Batch_details";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBatchDetails)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,7 +251,9 @@
         private System.Windows.Forms.ComboBox cmbHourEnd;
         private System.Windows.Forms.ComboBox cmbMinuteEnd;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridBatchDetails;
+        private System.Windows.Forms.Button btnAddBatch;
+        private System.Windows.Forms.Label lblCourseName;
+        private System.Windows.Forms.ComboBox comboBoxCourse;
     }
 }
